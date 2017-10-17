@@ -1,8 +1,9 @@
 <ul>
     <li *ngFor="let item of liste">
-        <a href="#">
+        <a [routerLink]="[ '/user', item.id]">
         {{item.username}}
       </a>
         <!-- <button (click)="removeUser(item.id)">X</button> -->
     </li>
+
 </ul>

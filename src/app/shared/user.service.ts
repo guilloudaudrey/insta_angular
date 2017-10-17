@@ -19,6 +19,11 @@ export class UserAjaxService {
     //     return this.http.post(this.urlAPI, user).toPromise();
     // }
 
+    getUserById(id:number):Observable<User> {
+      return this.http.get<User>(this.urlAPI+'/'+id)
+      .catch(this.handleError);
+    }
+
     removeUser(user:User):Promise<any> {
         return this.http.delete(this.urlAPI+'/'+user.id).toPromise();
     }
